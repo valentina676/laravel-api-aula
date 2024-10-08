@@ -4,4 +4,4 @@ Projeto desenvolvido na disciplina de Programação Web II no ano de 2024 - IFRS
 Alguns intens trabalhados em aula:
  * git
  * docker
- * laravel
+ * laravel  

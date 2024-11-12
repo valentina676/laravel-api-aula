@@ -40,7 +40,7 @@ class JWTAuthController extends Controller
             }
 
             // se chegou ate aqui, deu certo
-            $user = auth()->user();
+            $user = JWTAuth::user();
 
             //No caso de atribuir um papel
             //$token = JWTAuth::claims(['role' => $user->role])->fromUser($user);
@@ -50,5 +50,10 @@ class JWTAuthController extends Controller
         } catch (JWTException $e){
             return response()->json(['error' => 'Could not create token'], 500);
         }
-    }
-}
+     }
+
+    public function logout(){
+            JWTAuth::invalidate(JWTAuth::getToken());
+            return response()->json(['menssage' => 'Logout successfully'], 200);
+        }
+}  
